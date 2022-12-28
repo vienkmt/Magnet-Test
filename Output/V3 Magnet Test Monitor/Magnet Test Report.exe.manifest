@@ -43,24 +43,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="43944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="270336">
+      <assemblyIdentity name="log4net" version="2.0.15.0" publicKeyToken="669E0DDF0BB1AA2A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>HUWmr6OPCxCBQGPypC5u/ORXUoU2Z2UOdlhEuFZrMzI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="44968">
       <assemblyIdentity name="Magnet Test Report" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rbaZaUiTKf1oEUE0jUDTZmlDCho1yjGmprhZh96uP2U=</dsig:DigestValue>
+        <dsig:DigestValue>mieGUMm2uec5bREL/G5KL/RrB07C71+RmKBqLDwA0jw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Magnet Test Report.exe.config" size="1424">
+  <file name="Magnet Test Report.exe.config" size="2484">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gmCotm+27PEzCkaXfteEhS+kIapNI5Z3sPz2LJEzY9U=</dsig:DigestValue>
+      <dsig:DigestValue>6+NRlT1wJ0AQHzhnwlf2U2U2Ti5k9IwgONWnwf9KyN8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rp.ico" size="10103">

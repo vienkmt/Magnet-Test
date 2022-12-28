@@ -64,11 +64,14 @@ namespace Test_Process_Monitor
         {
             try
             {
-                //ok thì lưu
-                txtString.Text = Properties.Settings.Default.mssql;
-                txtUser.Text = Properties.Settings.Default.user;
-                txtPassword.Text = Properties.Settings.Default.pwd;
-                txtDB.Text = Properties.Settings.Default.db;
+                if (Properties.Settings.Default.mssql != "")
+                {
+                    //ok thì lưu
+                    txtString.Text = Properties.Settings.Default.mssql;
+                    txtUser.Text = Properties.Settings.Default.user;
+                    txtPassword.Text = Properties.Settings.Default.pwd;
+                    txtDB.Text = Properties.Settings.Default.db;
+                }
             }
             catch(Exception ex)
             {

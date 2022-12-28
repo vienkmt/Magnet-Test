@@ -23,12 +23,13 @@ namespace Test_Logger
             //Load setting vào các ô kia
             try
             {
-                //ok thì lưu
-                txtString.Text = Properties.Settings.Default.mssql;
-                txtUser.Text = Properties.Settings.Default.user;
-                txtPassword.Text = Properties.Settings.Default.pwd;
-                cbbLine.SelectedIndex = Properties.Settings.Default.line;
-                txtDB.Text = Properties.Settings.Default.DB;
+                if (Properties.Settings.Default.mssql != "") { 
+                    txtString.Text = Properties.Settings.Default.mssql;
+                    txtUser.Text = Properties.Settings.Default.user;
+                    txtPassword.Text = Properties.Settings.Default.pwd;
+                    cbbLine.SelectedIndex = Properties.Settings.Default.line;
+                    txtDB.Text = Properties.Settings.Default.DB;
+                }
             }
             catch (Exception ex)
             {

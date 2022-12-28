@@ -14,7 +14,8 @@ namespace Test_Process_Monitor
 {
     public partial class frmMain_Report : Form
     {
-        string mssql, db, user, pwd, line, model;
+        string mssql, db, user, pwd;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
@@ -61,7 +62,8 @@ namespace Test_Process_Monitor
             }
             catch(Exception ex)
             {
-                MessageBox.Show("LOI luc bindding");
+                MessageBox.Show("LOI luc binding");
+                log.Error("Lỗi lúc binding " + ex.ToString());
             }
 
         }
@@ -73,7 +75,7 @@ namespace Test_Process_Monitor
 
         private void frmMain_Monitor_Load(object sender, EventArgs e)
         {
-            //txtQR.Focus();
+            log.Error("Loi luc binding ");
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Press_F1);
             //set time fillter
@@ -93,7 +95,7 @@ namespace Test_Process_Monitor
                 pwd = Properties.Settings.Default.pwd;
 
                 if (mssql == "") { 
-                    MessageBox.Show("Need setup Database config before use");
+                    MessageBox.Show("Need setup Database config before use/ Khởi chạy lần đầu, cần cài đặt CSDL");
                     frmSetting setup = new frmSetting();
                     setup.ShowDialog();
                 }
@@ -103,6 +105,7 @@ namespace Test_Process_Monitor
             catch (Exception ex)
             {
                 MessageBox.Show("Loi trong qua trinh get setting");
+                log.Error("Loi trong qua trinh get setting "+ex.ToString());
             }
 
         }
@@ -117,7 +120,7 @@ namespace Test_Process_Monitor
             }
         }
 
-        int sum = 0;
+       
         public frmMain_Report()
         {
             InitializeComponent();
@@ -153,8 +156,8 @@ namespace Test_Process_Monitor
                 
 
 
-            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id ASC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Test_Details,FORMAT (Time2, 'HH:mm dd/MM/yyyy') as Confirm_Time,Status2 as Confirm_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
-                "or Time2 between '{0}' and '{1}')"+line+stt2+qr,t1,t2);
+            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id DESC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Error_Details,FORMAT (Time2, 'HH:mm dd/MM/yyyy') as Confirm_Time,Status2 as Confirm_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
+                "or Time2 between '{0}' and '{1}') ORDER BY Id DESC" + line+stt2+qr,t1,t2);
 
             SqlConnection connection = new SqlConnection(connetionString);//
 
@@ -174,6 +177,7 @@ namespace Test_Process_Monitor
                 this.dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 this.dataGridView1.Columns[8].Width = 300;
+                this.dataGridView1.Columns[6].Width = 450;
                 this.dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 // this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataReader.Close();
@@ -186,6 +190,7 @@ namespace Test_Process_Monitor
             //if loi
             catch (Exception ex){
                 MessageBox.Show("Error while read database !" + ex.ToString());
+                log.Error("Error while read database !" + ex.ToString());
             }
             finally {
                 connection.Close();

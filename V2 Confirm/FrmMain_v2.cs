@@ -18,6 +18,7 @@ namespace Test_Logger
         string mssql, db, user, pwd;
         int line = 0;
         int sum = 0;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Test_Logger
                 //lblketqua.Visible = true;
                 SqlCommand command;
                 string connetionString = "Data Source=" + mssql + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + pwd;
-                string sql = String.Format("SELECT Id FROM Logs WHERE QRCode='{0}' AND Time1 IS NOT NULL", txtQR.Text);
+                string sql = String.Format("SELECT TOP(1) Id,Status1 FROM Logs WHERE QRCode='{0}' AND Time1 IS NOT NULL", txtQR.Text);
                 SqlConnection connection = new SqlConnection(connetionString);
 
                 try
@@ -53,11 +54,18 @@ namespace Test_Logger
                     command = new SqlCommand(sql, connection);
                     dataReader = command.ExecuteReader();
                     kq = sum + " - " + now + " - [OK PASS] - " + txtQR.Text + "\r\n";
-
+                    string stt = "";
                     string sql_new = "";
-                    //Nếu thấy bản ghi thì update - checked ok
+                    //Nếu thấy bản ghi thì show ra OK hay NG, rồi update - checked ok
                     if (dataReader.HasRows){
-                        btnKQ.Text = "PASS";
+
+                        while (dataReader.Read())
+                        {
+                            stt = dataReader.GetString(1);
+                        }
+
+
+                        btnKQ.Text = "FOUND - "+stt;
                         btnKQ.BackColor = Color.LimeGreen;
                         btnKQ.ForeColor = Color.White;
                         sql_new = String.Format("UPDATE Logs SET Time2 = getdate(), Status2='Checked' WHERE QRCode ='{0}';", txtQR.Text);
@@ -88,7 +96,8 @@ namespace Test_Logger
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thêm bản ghi mới vào CSDL, vui lòng kiểm tra cài đặt !" + ex.ToString());
+                    MessageBox.Show("Lỗi khi đọc CSDL, vui lòng kiểm tra cài đặt !" + ex.ToString());
+                    log.Error("Lỗi khi đọc CSDL, vui lòng kiểm tra cài đặt -> "+ex.ToString());
                 }
                 finally
                 {
@@ -104,6 +113,14 @@ namespace Test_Logger
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.mssql == "")
+            {
+                MessageBox.Show("Đây là lần đầu tiên khởi chạy, vui lòng cài đặt các thông số cần thiết");
+                frmSetting setup = new frmSetting();
+                setup.ShowDialog();
+
+            }
+
             txtQR.Focus();
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
