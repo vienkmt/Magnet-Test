@@ -56,7 +56,7 @@
             this.txtQR.Location = new System.Drawing.Point(12, 65);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(1263, 56);
+            this.txtQR.Size = new System.Drawing.Size(1263, 32);
             this.txtQR.TabIndex = 0;
             this.txtQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -92,7 +92,7 @@
             this.lblketqua.ForeColor = System.Drawing.Color.LimeGreen;
             this.lblketqua.Location = new System.Drawing.Point(1133, 853);
             this.lblketqua.Name = "lblketqua";
-            this.lblketqua.Size = new System.Drawing.Size(106, 50);
+            this.lblketqua.Size = new System.Drawing.Size(55, 25);
             this.lblketqua.TabIndex = 5;
             this.lblketqua.Text = "PASS";
             this.lblketqua.Visible = false;
@@ -103,7 +103,7 @@
             this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQR.Location = new System.Drawing.Point(282, 149);
             this.lblQR.Name = "lblQR";
-            this.lblQR.Size = new System.Drawing.Size(73, 50);
+            this.lblQR.Size = new System.Drawing.Size(38, 25);
             this.lblQR.TabIndex = 6;
             this.lblQR.Text = "QR";
             this.lblQR.Visible = false;
@@ -114,7 +114,7 @@
             this.lblInfo.Location = new System.Drawing.Point(1336, 813);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(100, 37);
+            this.lblInfo.Size = new System.Drawing.Size(51, 20);
             this.lblInfo.TabIndex = 1;
             this.lblInfo.Text = "label1";
             this.lblInfo.Visible = false;
@@ -126,7 +126,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(13, 837);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 50);
+            this.comboBox1.Size = new System.Drawing.Size(197, 30);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click_1);
             // 
@@ -137,7 +137,7 @@
             this.btnCOM.Location = new System.Drawing.Point(236, 837);
             this.btnCOM.Name = "btnCOM";
             this.btnCOM.Size = new System.Drawing.Size(227, 53);
-            this.btnCOM.TabIndex = 8;
+            this.btnCOM.TabIndex = 88;
             this.btnCOM.Text = "CONNECT";
             this.btnCOM.UseVisualStyleBackColor = true;
             this.btnCOM.Click += new System.EventHandler(this.btnCOM_Click_1);
@@ -191,8 +191,8 @@
             this.lblSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSerial.Location = new System.Drawing.Point(17, 894);
             this.lblSerial.Name = "lblSerial";
-            this.lblSerial.Size = new System.Drawing.Size(124, 31);
-            this.lblSerial.TabIndex = 11;
+            this.lblSerial.Size = new System.Drawing.Size(65, 17);
+            this.lblSerial.TabIndex = 6;
             this.lblSerial.Text = "Serial Stt";
             // 
             // button1
@@ -213,7 +213,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 937);
             this.Controls.Add(this.button1);

@@ -233,7 +233,7 @@ namespace Test_Logger
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+            lblnone.Focus();
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
                 if (!serialPort1.IsOpen)

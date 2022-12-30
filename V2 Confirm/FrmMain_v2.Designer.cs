@@ -44,7 +44,7 @@
             this.txtQR.Location = new System.Drawing.Point(14, 72);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(1346, 56);
+            this.txtQR.Size = new System.Drawing.Size(1346, 32);
             this.txtQR.TabIndex = 0;
             this.txtQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -79,7 +79,7 @@
             this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQR.Location = new System.Drawing.Point(399, 159);
             this.lblQR.Name = "lblQR";
-            this.lblQR.Size = new System.Drawing.Size(177, 50);
+            this.lblQR.Size = new System.Drawing.Size(92, 25);
             this.lblQR.TabIndex = 6;
             this.lblQR.Text = "QR Code:";
             this.lblQR.Visible = false;
@@ -97,7 +97,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 829);
             this.Controls.Add(this.btnKQ);
@@ -110,7 +110,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "V2 - Magnet Test Confirm 1.0";
+            this.Text = "V2 - Magnet Test Confirm 1.0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

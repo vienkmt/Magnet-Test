@@ -73,7 +73,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 85);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -85,7 +86,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(1627, 775);
+            this.dataGridView1.Size = new System.Drawing.Size(887, 420);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             // 
@@ -145,9 +146,10 @@
             "48",
             "49",
             "50"});
-            this.cbbLine.Location = new System.Drawing.Point(95, 84);
+            this.cbbLine.Location = new System.Drawing.Point(52, 46);
+            this.cbbLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbLine.Name = "cbbLine";
-            this.cbbLine.Size = new System.Drawing.Size(184, 41);
+            this.cbbLine.Size = new System.Drawing.Size(102, 25);
             this.cbbLine.TabIndex = 1;
             // 
             // cbbConfirmStatus
@@ -160,18 +162,20 @@
             "Waiting",
             "Confirmed",
             "Not Found"});
-            this.cbbConfirmStatus.Location = new System.Drawing.Point(415, 83);
+            this.cbbConfirmStatus.Location = new System.Drawing.Point(226, 45);
+            this.cbbConfirmStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbConfirmStatus.Name = "cbbConfirmStatus";
-            this.cbbConfirmStatus.Size = new System.Drawing.Size(273, 41);
+            this.cbbConfirmStatus.Size = new System.Drawing.Size(151, 25);
             this.cbbConfirmStatus.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 28);
+            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 31);
+            this.label1.Size = new System.Drawing.Size(29, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "QR";
             // 
@@ -179,9 +183,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 92);
+            this.label2.Location = new System.Drawing.Point(166, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 31);
+            this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -189,20 +194,23 @@
             // date1
             // 
             this.date1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date1.CustomFormat = "dd/MM/yyyy";
+            this.date1.CustomFormat = "yyyy/MM/dd";
             this.date1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date1.Location = new System.Drawing.Point(987, 26);
+            this.date1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date1.Location = new System.Drawing.Point(538, 14);
+            this.date1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.date1.Name = "date1";
-            this.date1.Size = new System.Drawing.Size(312, 40);
+            this.date1.Size = new System.Drawing.Size(172, 24);
             this.date1.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(746, 28);
+            this.label3.Location = new System.Drawing.Point(407, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 31);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "From";
             // 
@@ -210,17 +218,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(892, 25);
+            this.label4.Location = new System.Drawing.Point(487, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 31);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 8;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1338, 24);
+            this.btnSearch.Location = new System.Drawing.Point(730, 13);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(217, 101);
+            this.btnSearch.Size = new System.Drawing.Size(118, 55);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -232,30 +242,34 @@
             this.time1.CustomFormat = "HH:mm";
             this.time1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.time1.Location = new System.Drawing.Point(838, 26);
+            this.time1.Location = new System.Drawing.Point(457, 14);
+            this.time1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.time1.Name = "time1";
             this.time1.ShowUpDown = true;
-            this.time1.Size = new System.Drawing.Size(143, 40);
+            this.time1.Size = new System.Drawing.Size(80, 24);
             this.time1.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(746, 91);
+            this.label5.Location = new System.Drawing.Point(407, 49);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 31);
+            this.label5.Size = new System.Drawing.Size(25, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "To";
             // 
             // date2
             // 
             this.date2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date2.CustomFormat = "dd/MM/yyyy";
+            this.date2.CustomFormat = "yyyy/MM/dd";
             this.date2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date2.Location = new System.Drawing.Point(988, 84);
+            this.date2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date2.Location = new System.Drawing.Point(539, 46);
+            this.date2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.date2.Name = "date2";
-            this.date2.Size = new System.Drawing.Size(311, 40);
+            this.date2.Size = new System.Drawing.Size(171, 24);
             this.date2.TabIndex = 11;
             // 
             // time2
@@ -264,35 +278,38 @@
             this.time2.CustomFormat = "HH:mm";
             this.time2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.time2.Location = new System.Drawing.Point(838, 84);
+            this.time2.Location = new System.Drawing.Point(457, 46);
+            this.time2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.time2.Name = "time2";
             this.time2.ShowUpDown = true;
-            this.time2.Size = new System.Drawing.Size(142, 40);
+            this.time2.Size = new System.Drawing.Size(79, 24);
             this.time2.TabIndex = 14;
             // 
             // txtQR
             // 
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F);
-            this.txtQR.Location = new System.Drawing.Point(95, 24);
+            this.txtQR.Location = new System.Drawing.Point(52, 13);
+            this.txtQR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(593, 40);
+            this.txtQR.Size = new System.Drawing.Size(325, 24);
             this.txtQR.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 91);
+            this.label6.Location = new System.Drawing.Point(13, 49);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 31);
+            this.label6.Size = new System.Drawing.Size(35, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Line";
             // 
             // frmMain_Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1690, 956);
+            this.ClientSize = new System.Drawing.Size(922, 518);
             this.Controls.Add(this.txtQR);
             this.Controls.Add(this.time2);
             this.Controls.Add(this.label5);
@@ -309,9 +326,10 @@
             this.Controls.Add(this.cbbLine);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain_Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Set Magnet History Report";
+            this.Text = "Set Magnet History Report V1.0.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Monitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

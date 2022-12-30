@@ -53,7 +53,7 @@ namespace Test_Logger
                     ++sum;
                     command = new SqlCommand(sql, connection);
                     dataReader = command.ExecuteReader();
-                    kq = sum + " - " + now + " - [OK PASS] - " + txtQR.Text + "\r\n";
+                    //kq = sum + " - " + now + " - [OK PASS] - " + txtQR.Text + "\r\n";
                     string stt = "";
                     string sql_new = "";
                     //Nếu thấy bản ghi thì show ra OK hay NG, rồi update - checked ok
@@ -64,10 +64,21 @@ namespace Test_Logger
                             stt = dataReader.GetString(1);
                         }
 
+                        if (stt == "OK")
+                        {
+                            btnKQ.BackColor = Color.LimeGreen;
+                            btnKQ.ForeColor = Color.White;
+                            kq = sum + " - " + now + " - OK - " + txtQR.Text + "\r\n";
+                        }
+                        if (stt == "NG")
+                        {
+                            btnKQ.BackColor = Color.Red;
+                            btnKQ.ForeColor = Color.White;
+                            kq = sum + " - " + now + " - NG - " + txtQR.Text + "\r\n";
+                        }    
 
-                        btnKQ.Text = "FOUND - "+stt;
-                        btnKQ.BackColor = Color.LimeGreen;
-                        btnKQ.ForeColor = Color.White;
+
+                        btnKQ.Text = stt;
                         sql_new = String.Format("UPDATE Logs SET Time2 = getdate(), Status2='Checked' WHERE QRCode ='{0}';", txtQR.Text);
 
                     }

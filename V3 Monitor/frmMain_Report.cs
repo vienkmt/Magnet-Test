@@ -23,37 +23,43 @@ namespace Test_Process_Monitor
 
                 var grid = sender as DataGridView;
                 int rowscount = grid.Rows.Count;
+                
 
                 for (int i = 0; i < rowscount; i++)
                 {
-
+                    string test_rsl = "";
                    
                     if (!(grid.Rows[i].Cells["Test_Result"].Value == null))
                     {
                         string trangthai = grid.Rows[i].Cells["Test_Result"].Value.ToString();
-                        
+                        test_rsl = trangthai;
+
+
                         if (trangthai == "NG") { 
                             grid.Rows[i].Cells["Test_Result"].Style.BackColor = Color.OrangeRed;
                             grid.Rows[i].Cells["Test_Result"].Style.ForeColor = Color.White;
+                            grid.Rows[i].Cells["Check_Result"].Style.BackColor = Color.OrangeRed;
+                            grid.Rows[i].Cells["Check_Result"].Style.ForeColor = Color.White;
                         }
                         if (trangthai == "OK") { 
                             grid.Rows[i].Cells["Test_Result"].Style.BackColor = Color.LimeGreen;
+                            grid.Rows[i].Cells["Check_Result"].Style.BackColor = Color.LimeGreen;
                         }
                     }
 
-                    if (!(grid.Rows[i].Cells["Confirm_Result"].Value == null))
+                    if (!(grid.Rows[i].Cells["Check_Result"].Value == null))
                     {
-                        string Confirm_Result = grid.Rows[i].Cells["Confirm_Result"].Value.ToString();
+                        string Check_Result = grid.Rows[i].Cells["Check_Result"].Value.ToString();
 
-                        if (Confirm_Result == "Not Found")
+                        if (Check_Result == "Not Found")
                         {
-                            grid.Rows[i].Cells["Confirm_Result"].Style.BackColor = Color.OrangeRed;
-                            grid.Rows[i].Cells["Confirm_Result"].Style.ForeColor = Color.White;
+                            grid.Rows[i].Cells["Check_Result"].Style.BackColor = Color.Orange;
+                            grid.Rows[i].Cells["Check_Result"].Style.ForeColor = Color.Black;
 
                         }
-                        if (Confirm_Result == "Checked")
+                        if (Check_Result == "Checked")
                         {
-                            grid.Rows[i].Cells["Confirm_Result"].Style.BackColor = Color.LimeGreen;
+                            grid.Rows[i].Cells["Check_Result"].Value = test_rsl;
                         }
                     }
 
@@ -62,8 +68,8 @@ namespace Test_Process_Monitor
             }
             catch(Exception ex)
             {
-                MessageBox.Show("LOI luc binding");
-                log.Error("Lỗi lúc binding " + ex.ToString());
+                MessageBox.Show("Lỗi lúc binding");
+                log.Error("Loi luc binding " + ex.ToString());
             }
 
         }
@@ -156,7 +162,7 @@ namespace Test_Process_Monitor
                 
 
 
-            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id DESC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Error_Details,FORMAT (Time2, 'HH:mm dd/MM/yyyy') as Confirm_Time,Status2 as Confirm_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
+            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id DESC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Error_Details,FORMAT (Time2, 'HH:mm dd/MM/yyyy') as [Check_Time],Status2 as Check_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
                 "or Time2 between '{0}' and '{1}') ORDER BY Id DESC" + line+stt2+qr,t1,t2);
 
             SqlConnection connection = new SqlConnection(connetionString);//
@@ -177,7 +183,7 @@ namespace Test_Process_Monitor
                 this.dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 this.dataGridView1.Columns[8].Width = 300;
-                this.dataGridView1.Columns[6].Width = 450;
+                this.dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 // this.dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataReader.Close();

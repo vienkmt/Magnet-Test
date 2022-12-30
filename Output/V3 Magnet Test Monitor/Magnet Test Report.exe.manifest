@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="44968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="45480">
       <assemblyIdentity name="Magnet Test Report" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mieGUMm2uec5bREL/G5KL/RrB07C71+RmKBqLDwA0jw=</dsig:DigestValue>
+        <dsig:DigestValue>PVzNvoGU/2pMVD9T2Yi3MY71EEJFOJhYty01Adb9660=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
