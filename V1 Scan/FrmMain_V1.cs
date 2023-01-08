@@ -133,7 +133,7 @@ namespace Test_Logger
                     btnKQ.BackColor = Color.LimeGreen;
                     btnKQ.ForeColor = Color.White;
                     sql = String.Format("INSERT INTO Logs(QRCode,Model,Status1,Line,Time1) VALUES ('{0}','{1}','OK',{2},getdate())", txtQR.Text, model, line);
-                    lblketqua.ForeColor = Color.Green;
+                    //lblketqua.ForeColor = Color.Green;
                     lblQR.Text = now.ToLongTimeString() + " - OK - " + txtQR.Text;
                     kq = sum + " - OK - " + now + " - " + txtQR.Text + "\r\n";
                 }
@@ -144,7 +144,7 @@ namespace Test_Logger
                     string NG_Pos = "";
                     for(int i = 0; i < ketquaNG.Length; i++)
                     {
-                        if (ketquaNG[i] == '0')
+                        if (ketquaNG[i] == '1')
                             NG_Pos += (i+1).ToString() + '.';
 
                     }
@@ -233,7 +233,7 @@ namespace Test_Logger
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lblnone.Focus();
+           // lblnone.Focus();
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
                 if (!serialPort1.IsOpen)
@@ -247,6 +247,9 @@ namespace Test_Logger
                 }
                 btnCancel.Visible = true;
                 txtLogs.Enabled = false;
+                btnKQ.Text = "Waiting...";
+                btnKQ.BackColor = Color.LightGray;
+                btnKQ.ForeColor = Color.DarkGray;
                 lblnone.Text = "Waiting for test result...";
                 txtQR.Enabled= false;
                 backgroundWorker1.RunWorkerAsync();

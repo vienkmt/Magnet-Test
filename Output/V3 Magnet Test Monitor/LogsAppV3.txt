@@ -30,3 +30,8 @@ Error Number:242,State:3,Class:16
 11:21:13 30/21/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
 11:21:33 30/21/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
 11:22:00 30/22/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
+14:45:38 30/45/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
+14:52:30 30/52/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
+14:53:55 30/53/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
+14:54:46 30/54/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 
+14:56:35 30/56/2022 - ERROR [frmMain_Monitor_Load]-> Loi luc binding 

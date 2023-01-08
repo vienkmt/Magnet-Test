@@ -1,1 +1,3 @@
-11:48:22 30/48/2022 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+15:17:05 08/17/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+15:18:24 08/18/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+15:41:20 08/41/2023 - ERROR [btnCOM_Click_1]-> Serial port COM22 opening error

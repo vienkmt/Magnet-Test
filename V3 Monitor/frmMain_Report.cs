@@ -61,7 +61,17 @@ namespace Test_Process_Monitor
                         {
                             grid.Rows[i].Cells["Check_Result"].Value = test_rsl;
                         }
+                        if (Check_Result == "")
+                        {
+                            grid.Rows[i].Cells["Check_Result"].Style.BackColor = Color.Gray;
+                            grid.Rows[i].Cells["Check_Result"].Style.ForeColor = Color.White;
+                            grid.Rows[i].Cells["Check_Result"].Value = "Waiting";
+
+                        }
+
+
                     }
+   
 
                 }
 

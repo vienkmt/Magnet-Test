@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="45480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Report.exe" size="44968">
       <assemblyIdentity name="Magnet Test Report" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>O2ECkrBR7oOSIjJ40wz2gA4Z4KFDuO5ngEkGfvxAHrs=</dsig:DigestValue>
+        <dsig:DigestValue>FGVDJVsR8RNJnNc45mQtBXMfde3AD+HcSD6gsPGwY7c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -72,7 +72,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6+NRlT1wJ0AQHzhnwlf2U2U2Ti5k9IwgONWnwf9KyN8=</dsig:DigestValue>
+      <dsig:DigestValue>Qyl2LgmtDEdJlXfCxMp81BM/QtQhcrQlqvCVthu73C4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="rp.ico" size="10103">
