@@ -45,10 +45,11 @@
             this.resetAlarm = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblinput = new System.Windows.Forms.Label();
+            this.lblOutput = new System.Windows.Forms.Label();
+            this.lblInputOK = new System.Windows.Forms.Label();
+            this.lblOutputOK = new System.Windows.Forms.Label();
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.txtQR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQR.Location = new System.Drawing.Point(13, 121);
+            this.txtQR.Location = new System.Drawing.Point(13, 106);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
             this.txtQR.Size = new System.Drawing.Size(1065, 56);
@@ -69,12 +70,12 @@
             this.lblnone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblnone.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnone.Location = new System.Drawing.Point(369, 195);
+            this.lblnone.Location = new System.Drawing.Point(234, 182);
             this.lblnone.Name = "lblnone";
-            this.lblnone.Size = new System.Drawing.Size(709, 41);
+            this.lblnone.Size = new System.Drawing.Size(818, 41);
             this.lblnone.TabIndex = 3;
             this.lblnone.Text = "Waiting for scan...";
-            this.lblnone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblnone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtLogs
             // 
@@ -82,11 +83,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogs.Location = new System.Drawing.Point(10, 249);
+            this.txtLogs.Location = new System.Drawing.Point(10, 234);
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(1069, 394);
+            this.txtLogs.Size = new System.Drawing.Size(1069, 409);
             this.txtLogs.TabIndex = 4;
             this.txtLogs.TabStop = false;
             // 
@@ -94,17 +95,16 @@
             // 
             this.lblQR.AutoSize = true;
             this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQR.Location = new System.Drawing.Point(236, 190);
+            this.lblQR.Location = new System.Drawing.Point(540, 659);
             this.lblQR.Name = "lblQR";
             this.lblQR.Size = new System.Drawing.Size(116, 50);
             this.lblQR.TabIndex = 6;
             this.lblQR.Text = "Code:";
-            this.lblQR.Visible = false;
             // 
             // btnKQ
             // 
             this.btnKQ.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKQ.Location = new System.Drawing.Point(10, 174);
+            this.btnKQ.Location = new System.Drawing.Point(10, 166);
             this.btnKQ.Name = "btnKQ";
             this.btnKQ.Size = new System.Drawing.Size(218, 62);
             this.btnKQ.TabIndex = 7;
@@ -180,6 +180,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel1
@@ -189,10 +190,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55399F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44601F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblinput, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblOutput, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblInputOK, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblOutputOK, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -201,46 +202,52 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1065, 88);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // label1
+            // lblinput
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(724, 88);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Total Input: 0";
+            this.lblinput.AutoSize = true;
+            this.lblinput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblinput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinput.Location = new System.Drawing.Point(3, 0);
+            this.lblinput.Name = "lblinput";
+            this.lblinput.Size = new System.Drawing.Size(362, 44);
+            this.lblinput.TabIndex = 0;
+            this.lblinput.Text = "Total Input: 0";
             // 
-            // label2
+            // lblOutput
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(371, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(691, 44);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Total Output: 0";
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutput.Location = new System.Drawing.Point(371, 0);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(691, 44);
+            this.lblOutput.TabIndex = 1;
+            this.lblOutput.Text = "Total Output: 0";
             // 
-            // label3
+            // lblInputOK
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(3, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(362, 44);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "OK:0  - NG: 0";
+            this.lblInputOK.AutoSize = true;
+            this.lblInputOK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInputOK.Location = new System.Drawing.Point(3, 44);
+            this.lblInputOK.Name = "lblInputOK";
+            this.lblInputOK.Size = new System.Drawing.Size(362, 44);
+            this.lblInputOK.TabIndex = 2;
+            this.lblInputOK.Text = "OK:0  - NG: 0";
             // 
-            // label4
+            // lblOutputOK
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(371, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(691, 44);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "OK: 0    - NG: 0  - Not Found: 0";
+            this.lblOutputOK.AutoSize = true;
+            this.lblOutputOK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblOutputOK.Location = new System.Drawing.Point(371, 44);
+            this.lblOutputOK.Name = "lblOutputOK";
+            this.lblOutputOK.Size = new System.Drawing.Size(691, 44);
+            this.lblOutputOK.TabIndex = 3;
+            this.lblOutputOK.Text = "OK: 0    - NG: 0  - Not Found: 0";
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 3000;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Form1
             // 
@@ -263,7 +270,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "V2 - Magnet Test Confirm 1.1";
+            this.Text = "V2 - Magnet Test Confirm 1.2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -290,9 +297,10 @@
         private System.Windows.Forms.Button resetAlarm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblinput;
+        private System.Windows.Forms.Label lblOutput;
+        private System.Windows.Forms.Label lblInputOK;
+        private System.Windows.Forms.Label lblOutputOK;
+        private System.Windows.Forms.Timer timer4;
     }
 }

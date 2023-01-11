@@ -118,6 +118,7 @@ namespace Test_Logger
                         // SQL insert
                         sql_new = String.Format("INSERT INTO Logs(QRCode,Time2,Status2,Line) VALUES ('{0}',getdate(),'Not Found','{1}')", txtQR.Text, line);
                     }
+                    timer4.Enabled = true;
                     dataReader.Close();
                     command.Dispose();
                     //cuối cùng vẫn cứ là query 
@@ -139,6 +140,7 @@ namespace Test_Logger
                         timer2.Enabled= true;
 
                       }
+                    
 
                 }
                 catch (Exception ex)
@@ -406,8 +408,24 @@ namespace Test_Logger
 
                 //Hiển thị dữ liệu nhé
                 //Console.WriteLine(input);
-               // Console.WriteLine(output_404);
+                // Console.WriteLine(output_404);
+                lblinput.Invoke(new Action(() =>
+                {
+                    this.lblinput.Text = "Total Input: " + input;
+                }));
+                lblOutput.Invoke(new Action(() =>
+                {
+                    this.lblOutput.Text = "Total Output: " + output;
+                }));
+                lblInputOK.Invoke(new Action(() =>
+                {
+                    this.lblInputOK.Text = "OK: " + input_ok + "  -  NG: " + input_ng;
+                }));
 
+                lblOutputOK.Invoke(new Action(() =>
+                {
+                    this.lblOutputOK.Text = "OK: " + output_ok + "  -  NG: " + output_ng + "     -  Not Found: " + output_404;
+                }));
 
                 dataReader.Close();
                 command.Dispose();
@@ -424,6 +442,141 @@ namespace Test_Logger
             }
 
 
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            //1 qerry
+            // lọc lấy dữ liệu cần thiết
+            //3// trình bày
+
+            mssql = Properties.Settings.Default.mssql;
+            db = Properties.Settings.Default.DB;
+            user = Properties.Settings.Default.user;
+            pwd = Properties.Settings.Default.pwd;
+            line = Properties.Settings.Default.line + 1;
+
+
+            string connetionString = "Data Source=" + mssql + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + pwd;
+
+            SqlDataReader dataReader = null;
+            SqlCommand command;
+            //so sánh thời gian để tạo sql
+            int hientai = Int32.Parse(DateTime.Now.ToString("HH"));
+            string sql = "";
+            string t1 = "";
+            string t2 = "";
+
+            if ((hientai > 7) & (hientai < 20))
+            {
+                //Lớn hơn 7h sáng và nhỏ hơn 20 giờ cùng ngày
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 08:00:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:59:00");
+            }
+
+            if (hientai > 19)
+            {
+                //sẽ lấy từ 20h tới 23h59 cùng ngày
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 20:00:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:00");
+            }
+
+            if (hientai < 8)
+            {
+                //20h của ngày hôm trước và 8h ngày hôm sau
+                t1 = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd 20:00:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:59:00");
+
+            }
+
+            sql = String.Format("SELECT ISNULL(Time1,'1999-01-01'),ISNULL(Status1,'null'),ISNULL(Time2,'1999-01-01'),ISNULL(Status2,'null') FROM Logs WHERE (Time1 between '{0}' and '{1}' or Time2 between '{0}' and '{1}') AND Line={2}", t1, t2, line);
+
+            SqlConnection connection = new SqlConnection(connetionString);
+
+
+
+
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+                string stt = "";
+                int input, input_ok, input_ng;
+                int output, output_ok, output_ng, output_404;
+
+                input = input_ok = input_ng = output = output_ok = output_ng = output_404 = 0;
+                if (dataReader.HasRows)
+                {
+                    //Có kết quả, bắt đầu đếm các số liệu cần thiết.
+                    while (dataReader.Read())
+                    {
+
+                        string stt1 = dataReader.GetString(1);
+                        string stt2 = dataReader.GetString(3);
+                        string time1 = dataReader.GetDateTime(0).ToString();
+                        string time2 = dataReader.GetDateTime(2).ToString();
+
+                        if (stt1 != "null")
+                        {
+                            ++input;
+                            if (stt1 == "OK")
+                                ++input_ok;
+                            if (stt1 == "NG")
+                                ++input_ng;
+
+                        }
+                        if (stt2 != "null")
+                        {
+                            ++output;
+                            if (stt2 == "OK")
+                                ++output_ok;
+                            if (stt2 == "NG")
+                                ++output_ng;
+                            if (stt2 == "Not Found")
+                                ++output_404;
+                        }
+                    }
+                }
+                else
+                {
+                    //Không có dữ liệu, thì =0;
+                }
+
+                //Hiển thị dữ liệu nhé
+                //Console.WriteLine(input);
+                // Console.WriteLine(output_404);
+                lblinput.Invoke(new Action(() =>
+                {
+                    this.lblinput.Text = "Total Input: " + input;
+                }));
+                lblOutput.Invoke(new Action(() =>
+                {
+                    this.lblOutput.Text = "Total Output: " + output;
+                }));
+                lblInputOK.Invoke(new Action(() =>
+                {
+                    this.lblInputOK.Text = "OK: " + input_ok + "  -  NG: " + input_ng;
+                }));
+
+                lblOutputOK.Invoke(new Action(() =>
+                {
+                    this.lblOutputOK.Text = "OK: " + output_ok + "  -  NG: " + output_ng + "     -  Not Found: " + output_404;
+                }));
+
+                dataReader.Close();
+                command.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt !" + ex.ToString());
+                log.Error("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt -> " + ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
         #endregion
 

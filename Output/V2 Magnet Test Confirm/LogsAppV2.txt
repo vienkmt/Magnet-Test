@@ -40,3 +40,5 @@
    at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 365
 ClientConnectionId:400447b1-4dd2-450b-82dd-85aff86de6c5
 Error Number:174,State:1,Class:15
+03:05:12 12/05/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+03:05:24 12/05/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
