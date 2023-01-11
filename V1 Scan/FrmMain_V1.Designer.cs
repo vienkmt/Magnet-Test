@@ -51,7 +51,7 @@
             this.txtQR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQR.Location = new System.Drawing.Point(12, 47);
+            this.txtQR.Location = new System.Drawing.Point(12, 65);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
             this.txtQR.Size = new System.Drawing.Size(1248, 44);
@@ -65,7 +65,7 @@
             this.lblnone.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnone.Location = new System.Drawing.Point(12, 9);
             this.lblnone.Name = "lblnone";
-            this.lblnone.Size = new System.Drawing.Size(1261, 34);
+            this.lblnone.Size = new System.Drawing.Size(1261, 52);
             this.lblnone.TabIndex = 3;
             this.lblnone.Text = "Waiting for scan...";
             this.lblnone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -76,18 +76,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogs.Location = new System.Drawing.Point(12, 193);
+            this.txtLogs.Location = new System.Drawing.Point(12, 227);
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(1248, 573);
+            this.txtLogs.Size = new System.Drawing.Size(1248, 526);
             this.txtLogs.TabIndex = 4;
             // 
             // lblQR
             // 
             this.lblQR.AutoSize = true;
             this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQR.Location = new System.Drawing.Point(273, 125);
+            this.lblQR.Location = new System.Drawing.Point(260, 171);
             this.lblQR.Name = "lblQR";
             this.lblQR.Size = new System.Drawing.Size(55, 38);
             this.lblQR.TabIndex = 6;
@@ -110,7 +110,7 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 788);
+            this.comboBox1.Location = new System.Drawing.Point(13, 770);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(197, 48);
             this.comboBox1.TabIndex = 7;
@@ -119,10 +119,10 @@
             // btnCOM
             // 
             this.btnCOM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCOM.Location = new System.Drawing.Point(227, 788);
+            this.btnCOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCOM.Location = new System.Drawing.Point(227, 770);
             this.btnCOM.Name = "btnCOM";
-            this.btnCOM.Size = new System.Drawing.Size(227, 47);
+            this.btnCOM.Size = new System.Drawing.Size(227, 48);
             this.btnCOM.TabIndex = 88;
             this.btnCOM.TabStop = false;
             this.btnCOM.Text = "CONNECT";
@@ -143,10 +143,10 @@
             // 
             // btnKQ
             // 
-            this.btnKQ.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKQ.Location = new System.Drawing.Point(12, 98);
+            this.btnKQ.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKQ.Location = new System.Drawing.Point(13, 123);
             this.btnKQ.Name = "btnKQ";
-            this.btnKQ.Size = new System.Drawing.Size(241, 76);
+            this.btnKQ.Size = new System.Drawing.Size(241, 89);
             this.btnKQ.TabIndex = 9;
             this.btnKQ.TabStop = false;
             this.btnKQ.Text = "Result";
@@ -156,9 +156,9 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(482, 788);
+            this.btnCancel.Location = new System.Drawing.Point(482, 770);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(239, 47);
+            this.btnCancel.Size = new System.Drawing.Size(239, 48);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "Cancel Test";
@@ -178,7 +178,7 @@
             this.lblSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSerial.AutoSize = true;
             this.lblSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerial.Location = new System.Drawing.Point(14, 840);
+            this.lblSerial.Location = new System.Drawing.Point(14, 832);
             this.lblSerial.Name = "lblSerial";
             this.lblSerial.Size = new System.Drawing.Size(133, 33);
             this.lblSerial.TabIndex = 6;

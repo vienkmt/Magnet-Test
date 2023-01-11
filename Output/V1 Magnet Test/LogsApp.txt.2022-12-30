@@ -1,5 +1,0 @@
-11:48:22 30/48/2022 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
-13:29:51 30/29/2022 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
-13:29:58 30/29/2022 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
-14:36:23 30/36/2022 - ERROR [serialPort1_DataReceived]-> L?i khi nh?n or x? lí d? li?u t? c?ng COM System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at Test_Logger.Form1.serialPort1_DataReceived(Object sender, SerialDataReceivedEventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 214
