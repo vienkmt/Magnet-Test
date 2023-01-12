@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Confirm.exe" size="64936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Magnet Test Confirm.exe" size="63400">
       <assemblyIdentity name="Magnet Test Confirm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QSZNdIpNUv+xjY+iAC8gRk7TQ/mgtbXMYHUPe/0BPjs=</dsig:DigestValue>
+        <dsig:DigestValue>tBd4X7XYnkcMqlY33Aybpd8869asMwydLnmMfZ7N0mg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

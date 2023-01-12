@@ -58,7 +58,7 @@
             this.txtQR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQR.Location = new System.Drawing.Point(13, 106);
+            this.txtQR.Location = new System.Drawing.Point(13, 107);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
             this.txtQR.Size = new System.Drawing.Size(1065, 56);
@@ -70,7 +70,7 @@
             this.lblnone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblnone.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnone.Location = new System.Drawing.Point(234, 182);
+            this.lblnone.Location = new System.Drawing.Point(234, 176);
             this.lblnone.Name = "lblnone";
             this.lblnone.Size = new System.Drawing.Size(818, 41);
             this.lblnone.TabIndex = 3;
@@ -87,24 +87,26 @@
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(1069, 409);
+            this.txtLogs.Size = new System.Drawing.Size(1069, 429);
             this.txtLogs.TabIndex = 4;
             this.txtLogs.TabStop = false;
             // 
             // lblQR
             // 
+            this.lblQR.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblQR.AutoSize = true;
             this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQR.Location = new System.Drawing.Point(540, 659);
+            this.lblQR.Location = new System.Drawing.Point(536, 684);
             this.lblQR.Name = "lblQR";
             this.lblQR.Size = new System.Drawing.Size(116, 50);
             this.lblQR.TabIndex = 6;
             this.lblQR.Text = "Code:";
+            this.lblQR.Visible = false;
             // 
             // btnKQ
             // 
             this.btnKQ.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKQ.Location = new System.Drawing.Point(10, 166);
+            this.btnKQ.Location = new System.Drawing.Point(10, 160);
             this.btnKQ.Name = "btnKQ";
             this.btnKQ.Size = new System.Drawing.Size(218, 62);
             this.btnKQ.TabIndex = 7;
@@ -117,7 +119,7 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 668);
+            this.comboBox1.Location = new System.Drawing.Point(11, 685);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 63);
             this.comboBox1.TabIndex = 8;
@@ -125,7 +127,7 @@
             // btnCOM
             // 
             this.btnCOM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCOM.Location = new System.Drawing.Point(171, 667);
+            this.btnCOM.Location = new System.Drawing.Point(171, 684);
             this.btnCOM.Name = "btnCOM";
             this.btnCOM.Size = new System.Drawing.Size(151, 39);
             this.btnCOM.TabIndex = 9;
@@ -138,7 +140,7 @@
             // 
             this.lblSerial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSerial.AutoSize = true;
-            this.lblSerial.Location = new System.Drawing.Point(7, 714);
+            this.lblSerial.Location = new System.Drawing.Point(7, 731);
             this.lblSerial.Name = "lblSerial";
             this.lblSerial.Size = new System.Drawing.Size(91, 37);
             this.lblSerial.TabIndex = 10;
@@ -162,7 +164,7 @@
             // resetAlarm
             // 
             this.resetAlarm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.resetAlarm.Location = new System.Drawing.Point(900, 669);
+            this.resetAlarm.Location = new System.Drawing.Point(900, 686);
             this.resetAlarm.Name = "resetAlarm";
             this.resetAlarm.Size = new System.Drawing.Size(179, 39);
             this.resetAlarm.TabIndex = 11;
@@ -174,7 +176,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(684, 669);
+            this.button1.Location = new System.Drawing.Point(684, 686);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 39);
             this.button1.TabIndex = 12;
@@ -188,8 +190,8 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55399F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44601F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.6408F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.3592F));
             this.tableLayoutPanel1.Controls.Add(this.lblinput, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOutput, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblInputOK, 0, 1);
@@ -209,7 +211,7 @@
             this.lblinput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinput.Location = new System.Drawing.Point(3, 0);
             this.lblinput.Name = "lblinput";
-            this.lblinput.Size = new System.Drawing.Size(362, 44);
+            this.lblinput.Size = new System.Drawing.Size(288, 44);
             this.lblinput.TabIndex = 0;
             this.lblinput.Text = "Total Input: 0";
             // 
@@ -218,9 +220,9 @@
             this.lblOutput.AutoSize = true;
             this.lblOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput.Location = new System.Drawing.Point(371, 0);
+            this.lblOutput.Location = new System.Drawing.Point(297, 0);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(691, 44);
+            this.lblOutput.Size = new System.Drawing.Size(765, 44);
             this.lblOutput.TabIndex = 1;
             this.lblOutput.Text = "Total Output: 0";
             // 
@@ -230,7 +232,7 @@
             this.lblInputOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblInputOK.Location = new System.Drawing.Point(3, 44);
             this.lblInputOK.Name = "lblInputOK";
-            this.lblInputOK.Size = new System.Drawing.Size(362, 44);
+            this.lblInputOK.Size = new System.Drawing.Size(288, 44);
             this.lblInputOK.TabIndex = 2;
             this.lblInputOK.Text = "OK:0  - NG: 0";
             // 
@@ -238,9 +240,9 @@
             // 
             this.lblOutputOK.AutoSize = true;
             this.lblOutputOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblOutputOK.Location = new System.Drawing.Point(371, 44);
+            this.lblOutputOK.Location = new System.Drawing.Point(297, 44);
             this.lblOutputOK.Name = "lblOutputOK";
-            this.lblOutputOK.Size = new System.Drawing.Size(691, 44);
+            this.lblOutputOK.Size = new System.Drawing.Size(765, 44);
             this.lblOutputOK.TabIndex = 3;
             this.lblOutputOK.Text = "OK: 0    - NG: 0  - Not Found: 0";
             // 
@@ -253,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 743);
+            this.ClientSize = new System.Drawing.Size(1093, 760);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.resetAlarm);
