@@ -172,7 +172,7 @@ namespace Test_Process_Monitor
                 
 
 
-            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id DESC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Error_Details,FORMAT (Time2, 'HH:mm dd/MM/yyyy') as [Check_Time],Status2 as Check_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
+            string sql = String.Format("Select ROW_NUMBER() OVER(ORDER BY Id DESC) AS #,QRCode,Model,Line,FORMAT(Time1, 'HH:mm:ss dd/MM/yyyy') as Test_Time, Status1 as Test_Result, Error as Error_Details,FORMAT (Time2, 'HH:mm:ss dd/MM/yyyy') as [Check_Time],Status2 as Check_Result  FROM Logs WHERE (Time1 between '{0}' and '{1}' " +
                 "or Time2 between '{0}' and '{1}') ORDER BY Id DESC" + line+stt2+qr,t1,t2);
 
             SqlConnection connection = new SqlConnection(connetionString);//
