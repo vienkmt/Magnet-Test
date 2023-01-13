@@ -1,0 +1,44 @@
+00:40:06 12/40/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+01:50:21 12/50/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+02:02:36 12/02/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 371
+02:06:06 12/06/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 372
+02:06:13 12/06/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 372
+02:17:09 12/17/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.InvalidCastException: Unable to cast object of type 'System.DateTime' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 377
+02:18:47 12/18/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.InvalidCastException: Unable to cast object of type 'System.DateTime' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 375
+02:20:44 12/20/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.InvalidCastException: Unable to cast object of type 'System.DateTime' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 376
+02:23:01 12/23/2023 - ERROR [button1_Click]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): The isnull function requires 2 argument(s).
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at Test_Logger.Form1.button1_Click(Object sender, EventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 365
+ClientConnectionId:400447b1-4dd2-450b-82dd-85aff86de6c5
+Error Number:174,State:1,Class:15
+03:05:12 12/05/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+03:05:24 12/05/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM

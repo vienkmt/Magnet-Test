@@ -329,7 +329,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain_Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Set Magnet History Report V1.0.1";
+            this.Text = "Set Magnet History Report V1.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Monitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

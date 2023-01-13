@@ -78,16 +78,17 @@ namespace Test_Logger
                     bool status = false;
                     command = new SqlCommand(sql, connection);
                     dataReader = command.ExecuteReader();
-                    //kq = sum + " - " + now + " - [OK PASS] - " + txtQR.Text + "\r\n";
                     string stt = "";
                     string sql_new = "";
+                    
                     //Nếu thấy bản ghi thì show ra OK hay NG, rồi update - checked ok
                     if (dataReader.HasRows)
                     {
-
+                        long Id = 0;
                         while (dataReader.Read())
                         {
                             stt = dataReader.GetString(1);
+                            Id = dataReader.GetInt64(0);
                         }
 
                         if (stt == "OK")
@@ -106,8 +107,7 @@ namespace Test_Logger
 
 
                         btnKQ.Text = stt;
-                        sql_new = String.Format("UPDATE Logs SET Time2 = getdate(), Status2='Checked' WHERE QRCode ='{0}';", txtQR.Text);
-
+                        sql_new = String.Format("UPDATE Logs SET Time2 = getdate(), Status2='Checked' WHERE Id ={0};",Id);
                     }
                     else
                     {
@@ -137,7 +137,7 @@ namespace Test_Logger
                         serialPort1.Write("CV_OFF");
                         Thread.Sleep(20);
                         serialPort1.Write("ON_SPK");
-                        timer2.Enabled= true;
+                        //timer2.Enabled= true;
 
                       }
                     
@@ -225,6 +225,12 @@ namespace Test_Logger
                 else
                 {
                     serialPort1.Write("READ_STT");
+                    txtQR.Invoke(new Action(() =>
+                    {
+                        this.txtQR.Focus();
+                    }));
+
+
                 }
             }
             catch (Exception ex)
@@ -289,7 +295,7 @@ namespace Test_Logger
                 serialPort1.Write("CV_ON");
                 Thread.Sleep(50);
                 serialPort1.Write("OFF_SPK");
-                timer2.Enabled = false;
+                //timer2.Enabled = false;
             }
             catch
             {
@@ -309,8 +315,8 @@ namespace Test_Logger
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Update();
+            timer4.Enabled = true;
 
         }
 
@@ -329,6 +335,7 @@ namespace Test_Logger
             //1 qerry
             // lọc lấy dữ liệu cần thiết
             //3// trình bày
+           // Waiting: 0
 
             mssql = Properties.Settings.Default.mssql;
             db = Properties.Settings.Default.DB;
@@ -352,6 +359,11 @@ namespace Test_Logger
                 //Lớn hơn 7h sáng và nhỏ hơn 20 giờ cùng ngày
                 t1 = DateTime.Now.ToString("yyyy/MM/dd 08:00:00");
                 t2 = DateTime.Now.ToString("yyyy/MM/dd 19:59:00");
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 08:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
+
             }
 
             if (hientai > 19)
@@ -359,6 +371,10 @@ namespace Test_Logger
                 //sẽ lấy từ 20h tới 23h59 cùng ngày
                 t1 = DateTime.Now.ToString("yyyy/MM/dd 20:00:00");
                 t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:00");
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
             }
 
             if (hientai < 8)
@@ -366,15 +382,13 @@ namespace Test_Logger
                 //20h của ngày hôm trước và 8h ngày hôm sau
                 t1 = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd 20:00:00");
                 t2 = DateTime.Now.ToString("yyyy/MM/dd 07:59:00");
-
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
             }
-
             sql = String.Format("SELECT ISNULL(Time1,'1999-01-01'),ISNULL(Status1,'null'),ISNULL(Time2,'1999-01-01'),ISNULL(Status2,'null') FROM Logs WHERE (Time1 between '{0}' and '{1}' or Time2 between '{0}' and '{1}') AND Line={2}", t1, t2, line);
-
             SqlConnection connection = new SqlConnection(connetionString);
-
-
-
 
             try
             {
@@ -409,9 +423,9 @@ namespace Test_Logger
                         if (stt2 != "null")
                         {
                             ++output;
-                            if (stt2 == "Checked" & stt1 == "OK")
+                            if ((stt2 == "Checked") & (stt1 == "OK"))
                                 ++output_ok;
-                            if (stt2 == "Checked" & stt1 == "NG")
+                            if ((stt2 == "Checked") & (stt1 == "NG"))
                                 ++output_ng;
                             if (stt2 == "Not Found")
                                 ++output_404;
@@ -420,12 +434,10 @@ namespace Test_Logger
                 }
                 else
                 {
-                    //Không có dữ liệu, thì =0;
+                   //Không có dữ liệu, thì =0;
                 }
 
                 //Hiển thị dữ liệu nhé
-                //Console.WriteLine(input);
-                // Console.WriteLine(output_404);
                 lblinput.Invoke(new Action(() =>
                 {
                     this.lblinput.Text = "Total Input: " + input;
@@ -436,21 +448,26 @@ namespace Test_Logger
                 }));
                 lblInputOK.Invoke(new Action(() =>
                 {
-                    this.lblInputOK.Text = "OK: " + input_ok + "  -  NG: " + input_ng;
+                    this.lblInputOK.Text = "OK: " + input_ok + "     NG: " + input_ng;
                 }));
+
 
                 lblOutputOK.Invoke(new Action(() =>
                 {
-                    this.lblOutputOK.Text = "OK: " + output_ok + "  -  NG: " + output_ng + "     -  Not Found: " + output_404;
+                    this.lblOutputOK.Text = "OK: " + output_ok + "     NG: " + output_ng + "     Not Found: " + output_404;
                 }));
+                lblWaiting.Invoke(new Action(() =>
+                {
+                this.lblWaiting.Text ="Waiting: "+(input_ok - output_ok).ToString();
 
+                }));
                 dataReader.Close();
                 command.Dispose();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt !" + ex.ToString());
+                MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, !" + ex.ToString());
                 log.Error("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt -> " + ex.ToString());
             }
             finally
