@@ -53,6 +53,8 @@
             this.lblTimeRange = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -92,6 +94,7 @@
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLogs.Size = new System.Drawing.Size(1087, 364);
             this.txtLogs.TabIndex = 4;
+            this.txtLogs.TabStop = false;
             // 
             // lblQR
             // 
@@ -309,7 +312,7 @@
             this.lblTimeRange.Name = "lblTimeRange";
             this.lblTimeRange.Size = new System.Drawing.Size(359, 34);
             this.lblTimeRange.TabIndex = 5;
-            this.lblTimeRange.Text = "Data from 08:00:00 to 20:00:00";
+            this.lblTimeRange.Text = "Data from 00:00:00 to 00:00:00";
             this.lblTimeRange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
@@ -350,14 +353,31 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.76812F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.23188F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1090, 65);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(947, 65);
             this.tableLayoutPanel3.TabIndex = 91;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(966, 575);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 31);
+            this.button1.TabIndex = 92;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 2000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 645);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -368,7 +388,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Set Magnet Test V1.3";
+            this.Text = "Set Magnet Test V1.4";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -407,6 +427,8 @@
         private System.Windows.Forms.Label lblTimeRange;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

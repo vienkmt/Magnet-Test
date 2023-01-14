@@ -245,17 +245,183 @@ namespace Test_Logger
                     txtQR.Focus();
                     return;
                 }
+
+                if (txtQR.TextLength<20)
+                {
+                    lblnone.Text = "Mã CN Code không hợp lệ, vui lòng scan lại...";
+                    lblnone.ForeColor = Color.Red;
+                    btnKQ.Text = "NG CN Code";
+                    txtQR.Clear();
+                    txtQR.Focus();
+                    return;
+                }
+
+
+
                 btnCancel.Visible = true;
                 txtLogs.Enabled = false;
                 btnKQ.Text = "Waiting...";
                 btnKQ.BackColor = Color.LightGray;
                 btnKQ.ForeColor = Color.DarkGray;
                 lblnone.Text = "Waiting for test result...";
+                lblnone.ForeColor = Color.Black;
                 txtQR.Enabled= false;
+                timer2.Enabled = true;
                 backgroundWorker1.RunWorkerAsync();
 
             }
         }
+
+
+
+        private void Update()
+        {
+            //1 qerry
+            // lọc lấy dữ liệu cần thiết
+            //3// trình bày
+            // Waiting: 0
+
+            mssql = Properties.Settings.Default.mssql;
+            db = Properties.Settings.Default.DB;
+            user = Properties.Settings.Default.user;
+            pwd = Properties.Settings.Default.pwd;
+            line = Properties.Settings.Default.line;
+
+
+            string connetionString = "Data Source=" + mssql + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + pwd;
+
+            SqlDataReader dataReader = null;
+            SqlCommand command;
+            //so sánh thời gian để tạo sql
+            int hientai = Int32.Parse(DateTime.Now.ToString("HH"));
+            string sql = "";
+            string t1 = "";
+            string t2 = "";
+
+            if ((hientai > 7) & (hientai < 20))
+            {
+                //Lớn hơn 7h sáng và nhỏ hơn 20 giờ cùng ngày
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 08:00:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:50:59");
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 08:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
+
+            }
+
+            if (hientai > 19)
+            {
+                //sẽ lấy từ 20h tới 23h59 cùng ngày
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 19:51:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:59");
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
+            }
+
+            if (hientai < 8)
+            {
+                //20h của ngày hôm trước và 8h ngày hôm sau
+                t1 = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd 20:00:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:50:00");
+                lblTimeRange.Invoke(new Action(() =>
+                {
+                    this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
+                }));
+            }
+            sql = String.Format("SELECT ISNULL(Time1,'1999-01-01'),ISNULL(Status1,'null'),ISNULL(Time2,'1999-01-01'),ISNULL(Status2,'null') FROM Logs WHERE (Time1 between '{0}' and '{1}' or Time2 between '{0}' and '{1}') AND Line={2}", t1, t2, line);
+            SqlConnection connection = new SqlConnection(connetionString);
+
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+                string stt = "";
+                int input, input_ok, input_ng;
+                int output, output_ok, output_ng, output_404;
+
+                input = input_ok = input_ng = output = output_ok = output_ng = output_404 = 0;
+                if (dataReader.HasRows)
+                {
+                    //Có kết quả, bắt đầu đếm các số liệu cần thiết.
+                    while (dataReader.Read())
+                    {
+
+                        string stt1 = dataReader.GetString(1);
+                        string stt2 = dataReader.GetString(3);
+                        string time1 = dataReader.GetDateTime(0).ToString();
+                        string time2 = dataReader.GetDateTime(2).ToString();
+
+                        if (stt1 != "null")
+                        {
+                            ++input;
+                            if (stt1 == "OK")
+                                ++input_ok;
+                            if (stt1 == "NG")
+                                ++input_ng;
+
+                        }
+                        if (stt2 != "null")
+                        {
+                            ++output;
+                            if ((stt2 == "Checked") & (stt1 == "OK"))
+                                ++output_ok;
+                            if ((stt2 == "Checked") & (stt1 == "NG"))
+                                ++output_ng;
+                            if (stt2 == "Not Found")
+                                ++output_404;
+                        }
+                    }
+                }
+                else
+                {
+                    //Không có dữ liệu, thì =0;
+                }
+
+                //Hiển thị dữ liệu nhé
+                lblinput.Invoke(new Action(() =>
+                {
+                    this.lblinput.Text = "Total Input: " + input;
+                }));
+                lblOutput.Invoke(new Action(() =>
+                {
+                    this.lblOutput.Text = "Total Output: " + output;
+                }));
+                lblInputOK.Invoke(new Action(() =>
+                {
+                    this.lblInputOK.Text = "OK: " + input_ok + "     NG: " + input_ng;
+                }));
+
+
+                lblOutputOK.Invoke(new Action(() =>
+                {
+                    this.lblOutputOK.Text = "OK: " + output_ok + "     NG: " + output_ng + "     Not Found: " + output_404;
+                }));
+                lblWaiting.Invoke(new Action(() =>
+                {
+                    this.lblWaiting.Text = "Waiting: " + (input_ok - output_ok).ToString();
+
+                }));
+                dataReader.Close();
+                command.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                timer2.Enabled = false;
+                MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, !" + ex.ToString());  
+                log.Error("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt -> " + ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -335,6 +501,16 @@ namespace Test_Logger
         private void lblQR_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timer2.Enabled = true;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Update();
         }
 
         private void SetText(string text)
