@@ -63,7 +63,7 @@
             this.txtQR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQR.Location = new System.Drawing.Point(12, 94);
+            this.txtQR.Location = new System.Drawing.Point(12, 89);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
             this.txtQR.Size = new System.Drawing.Size(1097, 32);
@@ -73,10 +73,10 @@
             // lblnone
             // 
             this.lblnone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblnone.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnone.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnone.Location = new System.Drawing.Point(168, 0);
             this.lblnone.Name = "lblnone";
-            this.lblnone.Size = new System.Drawing.Size(922, 35);
+            this.lblnone.Size = new System.Drawing.Size(922, 33);
             this.lblnone.TabIndex = 3;
             this.lblnone.Text = "Waiting for scan...";
             this.lblnone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -85,22 +85,22 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.txtLogs, 2);
             this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogs.Location = new System.Drawing.Point(3, 73);
+            this.txtLogs.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogs.Location = new System.Drawing.Point(3, 69);
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(1087, 383);
+            this.txtLogs.Size = new System.Drawing.Size(1087, 364);
             this.txtLogs.TabIndex = 4;
             // 
             // lblQR
             // 
             this.lblQR.AutoSize = true;
             this.lblQR.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQR.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQR.Location = new System.Drawing.Point(168, 35);
+            this.lblQR.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQR.Location = new System.Drawing.Point(168, 33);
             this.lblQR.Name = "lblQR";
-            this.lblQR.Size = new System.Drawing.Size(922, 35);
+            this.lblQR.Size = new System.Drawing.Size(922, 33);
             this.lblQR.TabIndex = 6;
             this.lblQR.Text = "QR";
             this.lblQR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,10 +110,10 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(1336, 813);
+            this.lblInfo.Location = new System.Drawing.Point(1336, 772);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(51, 20);
+            this.lblInfo.Size = new System.Drawing.Size(51, 19);
             this.lblInfo.TabIndex = 1;
             this.lblInfo.Text = "label1";
             this.lblInfo.Visible = false;
@@ -121,21 +121,23 @@
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(3, 3);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 37);
+            this.comboBox1.Size = new System.Drawing.Size(147, 33);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click_1);
             // 
             // btnCOM
             // 
             this.btnCOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCOM.Location = new System.Drawing.Point(163, 3);
+            this.btnCOM.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCOM.Location = new System.Drawing.Point(170, 3);
+            this.btnCOM.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnCOM.Name = "btnCOM";
-            this.btnCOM.Size = new System.Drawing.Size(154, 38);
+            this.btnCOM.Size = new System.Drawing.Size(140, 35);
             this.btnCOM.TabIndex = 88;
             this.btnCOM.TabStop = false;
             this.btnCOM.Text = "CONNECT";
@@ -157,11 +159,11 @@
             // btnKQ
             // 
             this.btnKQ.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKQ.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKQ.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKQ.Location = new System.Drawing.Point(3, 3);
             this.btnKQ.Name = "btnKQ";
             this.tableLayoutPanel2.SetRowSpan(this.btnKQ, 2);
-            this.btnKQ.Size = new System.Drawing.Size(159, 64);
+            this.btnKQ.Size = new System.Drawing.Size(159, 60);
             this.btnKQ.TabIndex = 9;
             this.btnKQ.TabStop = false;
             this.btnKQ.Text = "Result";
@@ -170,10 +172,11 @@
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(323, 3);
+            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(330, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(167, 38);
+            this.btnCancel.Size = new System.Drawing.Size(167, 35);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "Cancel Test";
@@ -193,10 +196,10 @@
             this.lblSerial.AutoSize = true;
             this.tableLayoutPanel3.SetColumnSpan(this.lblSerial, 3);
             this.lblSerial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerial.Location = new System.Drawing.Point(3, 44);
+            this.lblSerial.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerial.Location = new System.Drawing.Point(3, 41);
             this.lblSerial.Name = "lblSerial";
-            this.lblSerial.Size = new System.Drawing.Size(1084, 25);
+            this.lblSerial.Size = new System.Drawing.Size(1084, 24);
             this.lblSerial.TabIndex = 6;
             this.lblSerial.Text = "Serial Stt";
             this.lblSerial.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -222,13 +225,13 @@
             this.tableLayoutPanel1.Controls.Add(this.lblWaiting, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOutputOK, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTimeRange, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 74);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 70);
             this.tableLayoutPanel1.TabIndex = 89;
             // 
             // lblinput
@@ -239,7 +242,7 @@
             this.lblinput.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblinput.Location = new System.Drawing.Point(4, 1);
             this.lblinput.Name = "lblinput";
-            this.lblinput.Size = new System.Drawing.Size(358, 35);
+            this.lblinput.Size = new System.Drawing.Size(358, 33);
             this.lblinput.TabIndex = 0;
             this.lblinput.Text = "Total Input: 0";
             this.lblinput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,9 +253,9 @@
             this.lblInputOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblInputOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInputOK.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblInputOK.Location = new System.Drawing.Point(4, 37);
+            this.lblInputOK.Location = new System.Drawing.Point(4, 35);
             this.lblInputOK.Name = "lblInputOK";
-            this.lblInputOK.Size = new System.Drawing.Size(358, 36);
+            this.lblInputOK.Size = new System.Drawing.Size(358, 34);
             this.lblInputOK.TabIndex = 2;
             this.lblInputOK.Text = "OK:0     NG: 0";
             this.lblInputOK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,7 +268,7 @@
             this.lblOutput.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblOutput.Location = new System.Drawing.Point(369, 1);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(358, 35);
+            this.lblOutput.Size = new System.Drawing.Size(358, 33);
             this.lblOutput.TabIndex = 1;
             this.lblOutput.Text = "Total Output: 0";
             this.lblOutput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,7 +281,7 @@
             this.lblWaiting.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblWaiting.Location = new System.Drawing.Point(734, 1);
             this.lblWaiting.Name = "lblWaiting";
-            this.lblWaiting.Size = new System.Drawing.Size(359, 35);
+            this.lblWaiting.Size = new System.Drawing.Size(359, 33);
             this.lblWaiting.TabIndex = 4;
             this.lblWaiting.Text = "Waiting: 0";
             this.lblWaiting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,9 +292,9 @@
             this.lblOutputOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOutputOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOutputOK.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblOutputOK.Location = new System.Drawing.Point(369, 37);
+            this.lblOutputOK.Location = new System.Drawing.Point(369, 35);
             this.lblOutputOK.Name = "lblOutputOK";
-            this.lblOutputOK.Size = new System.Drawing.Size(358, 36);
+            this.lblOutputOK.Size = new System.Drawing.Size(358, 34);
             this.lblOutputOK.TabIndex = 3;
             this.lblOutputOK.Text = "OK: 0     NG: 0     Not Found: 0";
             this.lblOutputOK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,9 +305,9 @@
             this.lblTimeRange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTimeRange.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeRange.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTimeRange.Location = new System.Drawing.Point(734, 37);
+            this.lblTimeRange.Location = new System.Drawing.Point(734, 35);
             this.lblTimeRange.Name = "lblTimeRange";
-            this.lblTimeRange.Size = new System.Drawing.Size(359, 36);
+            this.lblTimeRange.Size = new System.Drawing.Size(359, 34);
             this.lblTimeRange.TabIndex = 5;
             this.lblTimeRange.Text = "Data from 08:00:00 to 20:00:00";
             this.lblTimeRange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,13 +324,13 @@
             this.tableLayoutPanel2.Controls.Add(this.btnKQ, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblnone, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblQR, 1, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 133);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 126);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1093, 459);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1093, 436);
             this.tableLayoutPanel2.TabIndex = 90;
             // 
             // tableLayoutPanel3
@@ -337,30 +340,30 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 770F));
             this.tableLayoutPanel3.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnCOM, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnCancel, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblSerial, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 598);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 568);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.76812F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.23188F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1090, 69);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1090, 65);
             this.tableLayoutPanel3.TabIndex = 91;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 679);
+            this.ClientSize = new System.Drawing.Size(1121, 645);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.txtQR);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
