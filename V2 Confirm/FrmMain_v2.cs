@@ -358,7 +358,7 @@ namespace Test_Logger
             {
                 //Lớn hơn 7h sáng và nhỏ hơn 20 giờ cùng ngày
                 t1 = DateTime.Now.ToString("yyyy/MM/dd 08:00:00");
-                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:59:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:50:59");
                 lblTimeRange.Invoke(new Action(() =>
                 {
                     this.lblTimeRange.Text = "Data from 08:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
@@ -369,8 +369,8 @@ namespace Test_Logger
             if (hientai > 19)
             {
                 //sẽ lấy từ 20h tới 23h59 cùng ngày
-                t1 = DateTime.Now.ToString("yyyy/MM/dd 20:00:00");
-                t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:00");
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 19:51:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:59");
                 lblTimeRange.Invoke(new Action(() =>
                 {
                     this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
@@ -381,7 +381,7 @@ namespace Test_Logger
             {
                 //20h của ngày hôm trước và 8h ngày hôm sau
                 t1 = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd 20:00:00");
-                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:59:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:50:00");
                 lblTimeRange.Invoke(new Action(() =>
                 {
                     this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");

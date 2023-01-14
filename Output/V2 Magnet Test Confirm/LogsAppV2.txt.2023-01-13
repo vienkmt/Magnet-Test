@@ -1,0 +1,15 @@
+17:48:15 13/48/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+17:48:25 13/48/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+18:10:28 13/10/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM
+19:00:29 13/00/2023 - ERROR [textBox1_KeyPress]-> L?i khi d?c CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near 'A'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Test_Logger.Form1.textBox1_KeyPress(Object sender, KeyPressEventArgs e) in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V2 Confirm\FrmMain_v2.cs:line 126
+ClientConnectionId:0db13030-c33a-47d3-9f79-dc2adede6e64
+Error Number:102,State:1,Class:15
+19:01:28 13/01/2023 - ERROR [textBox1_KeyPress]-> Chua k?t n?i COM

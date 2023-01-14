@@ -332,6 +332,11 @@ namespace Test_Logger
             backgroundWorker2.RunWorkerAsync();
         }
 
+        private void lblQR_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SetText(string text)
         {
             if (this.lblSerial.InvokeRequired)
