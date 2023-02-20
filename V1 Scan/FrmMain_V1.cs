@@ -18,6 +18,7 @@ using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Threading;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace Test_Logger
 {
@@ -236,6 +237,9 @@ namespace Test_Logger
            // lblnone.Focus();
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
+                //Check COM
+
+                
                 if (!serialPort1.IsOpen)
                 {
                     MessageBox.Show("Chưa kết nối COM hoặc bị ngắt kết nối");
@@ -245,7 +249,9 @@ namespace Test_Logger
                     txtQR.Focus();
                     return;
                 }
+                
 
+                //check mã CN hợp lệ hay không?
                 if (txtQR.TextLength<20)
                 {
                     lblnone.Text = "Mã CN Code không hợp lệ, vui lòng scan lại...";
@@ -256,8 +262,48 @@ namespace Test_Logger
                     return;
                 }
 
+                //Check trùng? Nếu trùng OK thì k cho bắn nữa.
+                try
+                {
+                    mssql = Properties.Settings.Default.mssql;
+                    db = Properties.Settings.Default.DB;
+                    user = Properties.Settings.Default.user;
+                    pwd = Properties.Settings.Default.pwd;
 
+                    SqlDataReader dataReader = null;
+                    SqlCommand command;
+                    string connetionString = "Data Source=" + mssql + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + pwd;
+                    string sql = String.Format("SELECT TOP(1) 1 FROM Logs WHERE QRCode='{0}' AND Status1='OK'", txtQR.Text);
+                    SqlConnection connection = new SqlConnection(connetionString);
+                    connection.Open();
+                    command = new SqlCommand(sql, connection);
+                    dataReader = command.ExecuteReader();
+                    
+                    if (dataReader.HasRows)
+                    {
+                       // MessageBox.Show("Trùng data! Đã thấy có dữ liệu OK cho sản phẩm này, xin mời test sản phẩm khác");
+                        dataReader.Close();
+                        command.Dispose();
+                        connection.Close();
+                        lblnone.Text = "Duplicate!!! Đã từng TEST rồi, vui lòng scan sản phẩm khác...";
+                        lblnone.ForeColor = Color.Red;
+                        btnKQ.Text = "Duplicate";
+                        txtQR.Clear();
+                        txtQR.Focus();
 
+                        return;
+                    }
+                    dataReader.Close();
+                    command.Dispose();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Lỗi khi tìm bản ghi trong CSDL");
+                   // MessageBox.Show(ex.Message);
+                }
+                
+                //Pass hết các bước thì triển
                 btnCancel.Visible = true;
                 txtLogs.Enabled = false;
                 btnKQ.Text = "Waiting...";
@@ -274,6 +320,7 @@ namespace Test_Logger
 
 
 
+        //Update kết quả ok ng lên màn hình để xem
         private void Update()
         {
             //1 qerry
@@ -302,7 +349,7 @@ namespace Test_Logger
             {
                 //Lớn hơn 7h sáng và nhỏ hơn 20 giờ cùng ngày
                 t1 = DateTime.Now.ToString("yyyy/MM/dd 08:00:00");
-                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:50:59");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 19:59:59");
                 lblTimeRange.Invoke(new Action(() =>
                 {
                     this.lblTimeRange.Text = "Data from 08:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
@@ -313,7 +360,7 @@ namespace Test_Logger
             if (hientai > 19)
             {
                 //sẽ lấy từ 20h tới 23h59 cùng ngày
-                t1 = DateTime.Now.ToString("yyyy/MM/dd 19:51:00");
+                t1 = DateTime.Now.ToString("yyyy/MM/dd 20:00:00");
                 t2 = DateTime.Now.ToString("yyyy/MM/dd 23:59:59");
                 lblTimeRange.Invoke(new Action(() =>
                 {
@@ -325,7 +372,7 @@ namespace Test_Logger
             {
                 //20h của ngày hôm trước và 8h ngày hôm sau
                 t1 = DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd 20:00:00");
-                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:50:00");
+                t2 = DateTime.Now.ToString("yyyy/MM/dd 07:59:59");
                 lblTimeRange.Invoke(new Action(() =>
                 {
                     this.lblTimeRange.Text = "Data from 20:00:00 to " + DateTime.Now.ToString("HH:mm:ss");
@@ -412,7 +459,7 @@ namespace Test_Logger
             catch (Exception ex)
             {
                 timer2.Enabled = false;
-                MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, !" + ex.ToString());  
+                //MessageBox.Show("Lỗi khi đọc total kết quả từ CSDL, !" + ex.ToString());  
                 log.Error("Lỗi khi đọc total kết quả từ CSDL, vui lòng kiểm tra cài đặt -> " + ex.ToString());
             }
             finally
@@ -425,7 +472,12 @@ namespace Test_Logger
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            backgroundWorker2.RunWorkerAsync();
+
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fileVersion = FileVersionInfo.GetVersionInfo(assembly.Location);
+            this.Text = "Set Magnet Test " + fileVersion.FileVersion;
+            
+            // backgroundWorker2.RunWorkerAsync();
             //Quét các cổng Serial đang hoạt động lên ComboBox1
             //Cố gắng kết nối tới COM Port trước đó, nếu k ok thì bật ra màn hình setup
             try {
@@ -486,16 +538,12 @@ namespace Test_Logger
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            while(true)
-            {
-               // Thread.Sleep(100);
-               // Console.WriteLine("-- wait ---");
-            }    
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            backgroundWorker2.RunWorkerAsync();
+            //backgroundWorker2.RunWorkerAsync();
         }
 
         private void lblQR_Click(object sender, EventArgs e)

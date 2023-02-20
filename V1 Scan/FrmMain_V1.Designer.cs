@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtQR = new System.Windows.Forms.TextBox();
             this.lblnone = new System.Windows.Forms.Label();
@@ -36,11 +37,11 @@
             this.lblInfo = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCOM = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnKQ = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.serialPort1 = new System.IO.Ports.SerialPort();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.lblSerial = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,7 +54,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer2 = new System.Windows.Forms.Timer();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -67,7 +68,7 @@
             this.txtQR.Location = new System.Drawing.Point(12, 89);
             this.txtQR.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(1097, 32);
+            this.txtQR.Size = new System.Drawing.Size(1097, 56);
             this.txtQR.TabIndex = 0;
             this.txtQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -115,7 +116,7 @@
             this.lblInfo.Location = new System.Drawing.Point(1336, 772);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(51, 19);
+            this.lblInfo.Size = new System.Drawing.Size(100, 39);
             this.lblInfo.TabIndex = 1;
             this.lblInfo.Text = "label1";
             this.lblInfo.Visible = false;
@@ -128,7 +129,7 @@
             this.comboBox1.Location = new System.Drawing.Point(3, 3);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 33);
+            this.comboBox1.Size = new System.Drawing.Size(147, 59);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click_1);
             // 
@@ -373,7 +374,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 645);
             this.Controls.Add(this.button1);

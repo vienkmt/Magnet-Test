@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -501,8 +503,15 @@ namespace Test_Logger
         #endregion "Hết nhận dữ liệu COM"
         private void Form1_Load(object sender, EventArgs e)
         {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fileVersion = FileVersionInfo.GetVersionInfo(assembly.Location);
+            this.Text = "V2 - Magnet Test Confirm " + fileVersion.FileVersion;
+
+
             try
             {
+
+
                 comboBox1.DataSource = SerialPort.GetPortNames();
                 if (Properties.Settings.Default.mssql == "")
                 {
