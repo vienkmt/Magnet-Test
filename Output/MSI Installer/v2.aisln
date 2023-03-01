@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer Solution" CreateVersion="20.3.2" version="20.3.2" Id="{1835220D-F0D2-47A0-8874-E41716005EAC}">
+  <PROJECT Path="v1.aip" Id="{C0C1C16B-8D83-4597-9EBE-FCDC8EA7680A}" Startup="true"/>
+  <PROJECT Path="Magnet Test Confirm v2.aip" Id="{4A7CA9E3-F9F4-48B2-909E-55D5D87E2A19}" Startup="false"/>
+</DOCUMENT>

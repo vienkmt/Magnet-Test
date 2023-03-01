@@ -273,7 +273,7 @@ namespace Test_Logger
                     SqlDataReader dataReader = null;
                     SqlCommand command;
                     string connetionString = "Data Source=" + mssql + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + pwd;
-                    string sql = String.Format("SELECT TOP(1) 1 FROM Logs WHERE QRCode='{0}' AND Status1='OK'", txtQR.Text);
+                    string sql = String.Format("SELECT TOP(1) 1 FROM Logs WHERE QRCode='{0}' AND Status1='OK' AND Status2 is null", txtQR.Text);
                     SqlConnection connection = new SqlConnection(connetionString);
                     connection.Open();
                     command = new SqlCommand(sql, connection);
@@ -285,7 +285,7 @@ namespace Test_Logger
                         dataReader.Close();
                         command.Dispose();
                         connection.Close();
-                        lblnone.Text = "Duplicate!!! Đã từng TEST rồi, vui lòng scan sản phẩm khác...";
+                        lblnone.Text = "Duplicate!!! Đã từng TEST V1 rồi, vui lòng cho đi qua V2...";
                         lblnone.ForeColor = Color.Red;
                         btnKQ.Text = "Duplicate";
                         txtQR.Clear();
@@ -299,10 +299,14 @@ namespace Test_Logger
                 }
                 catch (Exception ex)
                 {
+                    txtQR.Clear();
+                    txtQR.Focus();
                     log.Error("Lỗi khi tìm bản ghi trong CSDL");
-                   // MessageBox.Show(ex.Message);
+                    MessageBox.Show("Lỗi khi check duplicate   =>"+ex.ToString());
+                    return;
                 }
-                
+
+
                 //Pass hết các bước thì triển
                 btnCancel.Visible = true;
                 txtLogs.Enabled = false;

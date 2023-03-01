@@ -1,0 +1,127 @@
+07:26:46 20/26/2023 - ERROR [btnCOM_Click_1]-> Serial port LADA0 opening error
+07:27:26 20/27/2023 - ERROR [serialPort1_ErrorReceived]-> L?i COM serialPort1_ErrorReceived
+07:27:26 20/27/2023 - ERROR [serialPort1_ErrorReceived]-> L?i COM serialPort1_ErrorReceived
+07:27:26 20/27/2023 - ERROR [serialPort1_ErrorReceived]-> L?i COM serialPort1_ErrorReceived
+07:27:26 20/27/2023 - ERROR [serialPort1_ErrorReceived]-> L?i COM serialPort1_ErrorReceived
+07:30:07 20/30/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:30:09 20/30/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:47e3a18b-9458-422c-b9df-3246bfb004ea
+Error Number:18487,State:1,Class:14
+07:43:09 20/43/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:43:11 20/43/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:d19c276a-f9de-46e3-898f-9a5396a73e98
+Error Number:18487,State:1,Class:14
+07:44:11 20/44/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:44:13 20/44/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:d0945661-8d57-4bcd-8c84-5b97946f8243
+Error Number:18487,State:1,Class:14
+07:44:49 20/44/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:44:51 20/44/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:3be56fce-f249-4d7c-8b56-b179bad1cf03
+Error Number:18487,State:1,Class:14
+07:45:03 20/45/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:45:05 20/45/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:7891a23e-b831-42a5-858d-9d50a66478f2
+Error Number:18487,State:1,Class:14
+07:45:45 20/45/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:45:47 20/45/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:d3e32ed7-147f-4766-aaf9-9d4d69b5c22f
+Error Number:18487,State:1,Class:14
+07:46:16 20/46/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:46:18 20/46/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 378
+ClientConnectionId:50872dad-f642-4889-a204-6e4ffd249b74
+Error Number:18487,State:1,Class:14
+07:48:16 20/48/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:48:20 20/48/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 379
+ClientConnectionId:2566072c-71ea-4bdc-8759-4b80fe4568b8
+Error Number:18487,State:1,Class:14
+07:48:28 20/48/2023 - ERROR [textBox1_KeyPress]-> L?i khi tìm b?n ghi trong CSDL
+07:48:35 20/48/2023 - ERROR [Update]-> L?i khi d?c total k?t qu? t? CSDL, vui lòng ki?m tra cài d?t -> System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'eqm'.  Reason: The password of the account has expired.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Test_Logger.Form1.Update() in C:\Users\vienk\SynologyDrive\cSharp\Magnet Test\V1 Scan\FrmMain_V1.cs:line 379
+ClientConnectionId:0286fcad-28c4-4960-9b29-599779b4548e
+Error Number:18487,State:1,Class:14
